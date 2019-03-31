@@ -1,0 +1,35 @@
+{
+    "package": {
+        "name": "alertmanager",
+        "repo": "alertmanager",
+        "subject": "asten",
+        "desc": "The Alertmanager handles alerts sent by client applications such as the Prometheus server",
+        "website_url": "https://prometheus.io",
+        "issue_tracker_url": "https://github.com/prometheus/alertmanager/issues",
+        "vcs_url": "https://github.com/prometheus/alertmanager/releases",
+        "github_use_tag_release_notes": true,
+        "licenses": ["Apache-2.0"],
+        "labels": ["prometheus", "alertmanager", "alertmanager-deb", "monitoring", "alerting"],
+        "public_download_numbers": true,
+        "public_stats": true
+    },
+
+    "version": {
+        "name": "0.15.0.0",
+        "desc": "",
+        "released": "2018-06-22",
+        "vcs_tag": "0.15.0",
+        "gpgSign": true
+    },
+
+    "files":
+    [{"includePattern": "build/packages/(.*\.deb)", "uploadPattern": "pool/main/a/alertmanager/$1",
+    "matrixParams": {
+        "deb_distribution": "xenial",
+        "deb_component": "main",
+        "deb_architecture": "amd64",
+        "override": 1 }
+    }
+],
+    "publish": true
+}

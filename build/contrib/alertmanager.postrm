@@ -1,0 +1,36 @@
+#!/bin/bash
+
+set -e
+
+USER="alertmanager"
+GROUP="alertmanager"
+HOME="/var/lib/alertmanager"
+DESC="Alertmanager handles alerts"
+
+
+case "$1" in
+  remove)
+    /bin/systemctl stop alertmanager
+  ;;
+
+  upgrade)
+    /bin/systemctl restart alertmanager
+  ;;
+
+  purge)
+    /bin/rm -fr /etc/alertmanager /etc/default/alertmanager /var/lib/alertmanager
+  ;;
+
+  remove|failed-upgrade|abort-install|abort-upgrade|disappear)
+    /bin/systemctl restart alertmanager
+    exit 0
+  ;;
+
+  *)
+    echo "postrm called with unknown argument \`$1'" >&2
+    exit 1
+  ;;
+
+esac
+
+exit 0
