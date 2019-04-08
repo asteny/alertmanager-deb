@@ -15,10 +15,10 @@
     },
 
     "version": {
-        "name": "0.16.1.0",
+        "name": "0.16.2.0",
         "desc": "",
-        "released": "2019-01-31",
-        "vcs_tag": "0.16.1",
+        "released": "2019-04-03",
+        "vcs_tag": "0.16.2",
         "gpgSign": true
     },
 
