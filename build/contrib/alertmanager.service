@@ -16,7 +16,6 @@ EnvironmentFile=-/etc/default/alertmanager
 ExecStart=/usr/bin/alertmanager $CMD_OPTS
 ExecReload=/bin/kill -HUP $MAINPID
 KillSignal=SIGINT
-StandardOutput=null
 
 [Install]
 WantedBy=multi-user.target
