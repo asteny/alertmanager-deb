@@ -1,10 +1,6 @@
-VERSION = 0.21.0
-ITERATION = 1
-UID ?= 0
-
 all: build
 
-build: download
+build: compress
 	chmod -Rv 644 build/contrib/
 	fpm -s dir -f -t deb \
 		-n alertmanager \
@@ -20,6 +16,8 @@ build: download
 		build/contrib/alertmanager.preset=/usr/lib/systemd/system-preset/alertmanager.preset \
 		/tmp/alertmanager/alertmanager.yml=/etc/alertmanager/alertmanager.yml
 
+compress: download
+	upx /tmp/alertmanager/amtool /tmp/alertmanager/alertmanager
 
 download:
 	cd /tmp && curl -Lo alertmanager.tar.gz https://github.com/prometheus/alertmanager/releases/download/v$(VERSION)/alertmanager-$(VERSION).linux-amd64.tar.gz
