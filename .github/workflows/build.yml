@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     container: asteny/fpm-python-docker:focal-3.8
     env:
-      VERSION: 0.21.0
-      ITERATION: 2
+      VERSION: 0.22.1
+      ITERATION: 0
       GPGKEY: ${{ secrets.GPGKEY }}
       GPGPASS: ${{ secrets.GPGPASS }}
       PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
